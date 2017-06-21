@@ -35,15 +35,17 @@ a {
 }
 
 /*Header*/
-.logo {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+.site-branding {
   position: fixed;
   background-color: ivory;
-  width: 150px;
+  max-width: 150px;
   height: 70px;
   z-index: 20;
+}
+.site-branding .site-title {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .logo img {
   width: 130px;
