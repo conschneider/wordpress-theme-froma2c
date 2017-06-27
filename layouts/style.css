@@ -65,8 +65,9 @@ a:visited {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
+  font-size: 1rem;
   color: white;
+  height: 1rem;
 }
 .site-branding img {
   max-width: 130px;
