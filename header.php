@@ -24,21 +24,22 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'froma2c' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		
+
 		<div class="site-branding">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
+			<?php if ( has_custom_logo() ) :
+				the_custom_logo();
+			elseif ( is_front_page() && is_home() ) : ?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
+			<?php endif;?>
 
-			$description = get_bloginfo( 'description', 'display' );
+			<!--No description in sticky logo part
+			<?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
-			endif; ?>
+		endif; ?> end no description-->
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation nav-bar" role="navigation">
@@ -51,6 +52,16 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+
+		<?php if ( is_front_page() && is_home() ) : ?>
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<?php $description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php
+			endif;
+		endif;?>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
