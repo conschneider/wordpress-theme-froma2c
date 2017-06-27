@@ -17,16 +17,31 @@ body {
   text-transform: uppercase;
   text-decoration: none;
 }
+
+h1 {
+  color: orange;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
 h2 {
   font-size: 2em;
   line-height: 1.5em;
   padding: 0.3em 0;
 }
 
+h3 {
+  font-size: 1.7rem;
+  margin-top: 2rem;
+}
+
 a {
   text-decoration: none;
   font-family: 'Assistant', sans-serif;
   line-height: 1.2em;
+}
+a:visited {
+  color: inherit;
 }
 
 .container {
@@ -35,18 +50,25 @@ a {
 }
 
 /*Header*/
-.logo {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
+.site-branding {
   position: fixed;
-  background-color: ivory;
-  width: 150px;
-  height: 70px;
+  background-color: orange;
+  max-width: 150px;
+  min-height: 70px;
   z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.logo img {
-  width: 130px;
+.site-branding .site-title {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: white;
+}
+.site-branding img {
+  max-width: 130px;
 }
 
 .banner {
