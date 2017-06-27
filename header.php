@@ -55,6 +55,16 @@
 				) );
 			?>
 		</nav><!-- #site-navigation -->
+
+		<?php if ( is_front_page() && is_home() ) : ?>
+			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+			<?php $description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			<?php
+			endif; 
+		endif;?>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
