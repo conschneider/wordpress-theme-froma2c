@@ -53,15 +53,9 @@ a:visited {
 /*Header*/
 .site-branding {
   position: fixed;
-<<<<<<< HEAD
-  background-color: ivory;
-  max-width: 150px;
-  height: 70px;
-=======
   background-color: orange;
   max-width: 150px;
   min-height: 70px;
->>>>>>> 9afbedb7d21cdcf1069fdfa973115f3620e309b5
   z-index: 20;
   display: flex;
   align-items: center;
@@ -75,18 +69,9 @@ a:visited {
   color: white;
   height: 1rem;
 }
-<<<<<<< HEAD
-.site-branding .site-title {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.logo img {
-  width: 130px;
-=======
+
 .site-branding img {
   max-width: 130px;
->>>>>>> 9afbedb7d21cdcf1069fdfa973115f3620e309b5
 }
 
 .banner {

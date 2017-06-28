@@ -32,23 +32,14 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-<<<<<<< HEAD
-			<?php
-		endif; ?>
-=======
-			<?php endif;?>
+			<?php endif; ?>
 
->>>>>>> 9afbedb7d21cdcf1069fdfa973115f3620e309b5
 			<!--No description in sticky logo part
 			<?php $description = get_bloginfo( 'description', 'display' );
 			if ( $description || is_customize_preview() ) : ?>
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
-<<<<<<< HEAD
-		endif; ?>-->
-=======
 		endif; ?> end no description-->
->>>>>>> 9afbedb7d21cdcf1069fdfa973115f3620e309b5
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation nav-bar" role="navigation">
