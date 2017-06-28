@@ -52,7 +52,7 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-	
+
 </div> <!-- .post-entry -->
 </div> <!-- .post-archive container -->
 

@@ -67,6 +67,16 @@ function froma2c_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Add theme support for Custom Logo
+	add_theme_support( 'custom-logo', array(
+		'height'      => 50,
+		'width'       => 130,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'froma2c_setup' );
@@ -131,7 +141,7 @@ add_action( 'wp_enqueue_scripts', 'froma2c_scripts' );
 
 add_action( 'wp_enqueue_scripts', 'bg_load_google_fonts' );
 function bg_load_google_fonts() {
-	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Asap|Assistant|Muli|Nunito|Oxygen', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Asap|Assistant|Muli|Nunito|Oxygen', array() );
 }
 
 
