@@ -15,39 +15,62 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main" role="main">
 
-		<?php
-		if ( have_posts() ) :
+			<div class="post-archive">
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+				<?php
+				if ( have_posts() ) :
 
-			<?php
-			endif;
+					if ( is_home() && ! is_front_page() ) : ?>
+						<header>
+							<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						</header>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+					<?php
+					endif;
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+					/* Start the Loop */
+					if ( is_front_page() && is_home() ) :
 
-			endwhile;
+						// the query
+		        $wpb_all_query = new WP_Query(array('post_type'=>'post',
+		                                            'post_status'=>'publish',
+		                                            'posts_per_page'=> 10, // As per the post below you need to have a set number of posts.
+		                                            'offset' => 1
+		        ));
 
-			the_posts_navigation();
+		        if ( $wpb_all_query->have_posts() ) :
+							while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post();
+							get_template_part( 'template-parts/content', get_post_format() );
+							endwhile;
+						endif;
 
-		else :
+						//$query = new WP_Query( 'offset=1' );
+						//if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post();
 
-			get_template_part( 'template-parts/content', 'none' );
+					else:
+						while ( have_posts() ) : the_post();
 
-		endif; ?>
+						/*
+						 * Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', get_post_format() );
 
+						endwhile;
+					endif;
+
+					the_posts_navigation();
+
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif; ?>
+			</div><!-- .post-archive -->
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

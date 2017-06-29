@@ -122,7 +122,7 @@ function froma2c_scripts() {
 	wp_enqueue_style( 'froma2c-anna-style', get_template_directory_uri() . '/layouts/style.css'  );
 
 	//enqueue sidebar styles
-	wp_enqueue_style( 'froma2c-content-sidebar-style', get_template_directory_uri() . '/layouts/content-sidebar.css'  );
+	//wp_enqueue_style( 'froma2c-content-sidebar-style', get_template_directory_uri() . '/layouts/content-sidebar.css'  );
 	//wp_enqueue_style( 'froma2c-sidebar-content-style', get_template_directory_uri() . '/layouts/sidebar-content.css'  );
 
 	wp_enqueue_script( 'froma2c-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
