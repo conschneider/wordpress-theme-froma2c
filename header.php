@@ -32,7 +32,7 @@
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif;?>
+			<?php endif; ?>
 
 			<!--No description in sticky logo part
 			<?php $description = get_bloginfo( 'description', 'display' );
