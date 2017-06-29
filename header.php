@@ -63,12 +63,11 @@
 				<?php $args = array( 'posts_per_page' => '1' );
 				$recent_posts = new WP_Query($args);
 				$bannerBackground = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' );
-
 				while( $recent_posts->have_posts() ) :
 				    $recent_posts->the_post() ?>
 				    <div class="banner-box-content">
 								<p class="post-category"><a href="#"><?php the_category( ', ' ); ?></a></p>
-				        <a href="<?php echo get_permalink() ?>"><h2><?php the_title() ?></h2></a>
+				        <h2><a href="<?php echo get_permalink() ?>"><?php the_title() ?></a></h2>
 				        <div class="post-excerpt"><?php the_excerpt(); ?></div>
 				    </div><!--banner-box-content-->
 				<?php endwhile; ?>
