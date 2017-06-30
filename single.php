@@ -17,12 +17,18 @@ get_header(); ?>
 
 			get_template_part( 'template-parts/content-post', get_post_format() );
 
-			the_post_navigation();
+			the_post_navigation( array(
+            'screen_reader_text' => __( 'Continue Reading' ),
+					)
+				);
 
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+			if ( comments_open() || get_comments_number() ) : ?>
+				<div class="comment">
+					<?php comments_template(); ?>
+				</div>
+
+			<?php endif;
 
 		endwhile; // End of the loop.
 		?>

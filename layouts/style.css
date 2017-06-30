@@ -12,11 +12,11 @@ body {
   font-family: 'Assistant', sans-serif;
   line-height: 1.2em;
 }
-
+/*
 #main {
   padding: 2rem;
 }
-
+*/
 .post-category {
   display: block;
 }
@@ -115,6 +115,10 @@ nav ul li a {
   height: 500px;
 }
 
+.banner.small {
+  max-height: 300px;
+}
+
 .banner-box {
   display: flex;
   align-items: center;
@@ -129,19 +133,15 @@ nav ul li a {
   padding: 2rem;
 }
 
-/*Main Content*/
-/*.main {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 2em;
-}*/
-
+/*Archive Loop*/
 .post-archive {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+}
+
+.post-archive .entry-content {
+  margin-left: 0;
 }
 .post-entry {
   margin: 1.5rem 1rem;
@@ -165,7 +165,112 @@ nav ul li a {
   }
 }
 
-.highlight {
+/*Single Post*/
+.entry-header {
+  width: 100%;
+}
+
+.entry-header h2 {
+  color: orange;
+  padding-top: 0;
+  font-size: 3rem;
+}
+
+.post.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+}
+
+.entry-content {
+  margin: 0 auto;
+  max-width: 90%;
+}
+
+.entry-content p {
+  padding-bottom: 0.7rem;
+}
+
+.wp-caption .wp-caption-text {
+  display: block;
+  float: right;
+  text-align: right;
+  color: grey;
+  font-size: 0.9rem;
+}
+
+.entry-meta {
+  min-width: 20%;
+  margin-left: 1rem;
+}
+/*
+.entry-meta span {
+  border-left: 1px solid grey;
+  padding-left: 1rem;
+}*/
+
+.nav-links {
+  display: flex;
+  margin: 2rem auto 0 auto;
+  justify-content: space-between;
+  border-top: 1px solid grey;
+  width: 100%;
+  padding: 2rem 0;
+}
+.nav-previous {
+  padding-left: 10%;
+}
+.nav-next {
+  padding-right: 10%;
+  text-align: right;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 100%;
+  background-color: grey;
+}
+#comments{
+  width: 500px;
+  min-height: 100px;
+  background-color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 10%;
+  padding: 10px;
+  color: grey;
+}
+
+@media screen and (min-width: 768px) {
+  .post.container {
+    max-width: 80%;
+    display: flex;
+  }
+}
+@media screen and (min-width: 1224px) {
+  .post.container {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 50%;
+  }
+  .entry-content img {
+    max-width: 130%;
+  }
+  .entry-meta {
+    border-left: 1px solid grey;
+    padding-left: 1rem;
+  }
+  .wp-caption .wp-caption-text {
+    margin: 0 -9rem 0 0;
+    width: 25%;
+  }
+}
+
+
+/*.highlight {
   display: flex;
   align-items: center;
   padding: 0 10%;
@@ -189,7 +294,7 @@ nav ul li a {
 .highlight .btn:hover {
   border: 1px solid black;
   color: #000;
-}
+}*/
 
 /*Footer*/
 footer {

@@ -17,9 +17,9 @@
 	          </p>
 			<?php
 			if ( is_singular() ) :
-				the_title( '<h2 class="post-title">', '</h2>' );
+				the_title( '<h3 class="post-title">', '</h3>' );
 			else :
-				the_title( '<h2 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h3 class="post-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 			endif;
 
 			if ( has_post_thumbnail() ) : ?>
@@ -39,7 +39,7 @@
 
     <div class="entry-content">
       <?php
-        the_content( sprintf(
+        the_excerpt( sprintf(
           wp_kses(
             /* translators: %s: Name of current post. Only visible to screen readers */
             __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'froma2c' ),
