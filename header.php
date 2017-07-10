@@ -45,7 +45,10 @@
 		<!--Banner Section-->
 		<?php if ( is_front_page() && is_home() ) : ?>
 			<div class="banner">
+		<?php elseif ( is_single() && has_post_thumbnail() ) : ?>
+			<div class="banner small">
 		<?php endif;?>
+
 
 		<nav id="site-navigation" class="main-navigation nav-bar" role="navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'froma2c' ); ?></button>
@@ -81,7 +84,12 @@
 				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 			<?php
 			endif;
-		endif;?>
+
+		elseif ( is_single() && has_post_thumbnail() ) : ?>
+			<div class="banner-box container">
+				<?php $bannerBackground = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' ); ?>
+			</div>
+		<?php endif;?>
 
 
 		<style media="screen">
