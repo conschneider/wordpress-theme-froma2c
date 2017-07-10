@@ -12,51 +12,124 @@ body {
   font-family: 'Assistant', sans-serif;
   line-height: 1.2em;
 }
-/*
-#main {
-  padding: 2rem;
-}
-*/
-.post-category {
-  display: block;
-}
-.post-category a {
-  color: grey;
-  text-transform: uppercase;
-  text-decoration: none;
-}
 
 h1 {
   color: orange;
   font-size: 5rem;
   font-weight: bold;
   height: 3rem;
+  line-height: 5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 2em;
+  font-size: 3em;
   line-height: 1.5em;
   padding: 0.3em 0;
+  color: orange;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.7rem;
-  margin-top: 2rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+p {
+  margin: 1em 0;
 }
 
 a {
   text-decoration: none;
   font-family: 'Assistant', sans-serif;
   line-height: 1.2em;
-  color: inherit;
+  color: orange;
 }
 a:visited {
+  color: orange;
+}
+
+.post-title a {
   color: inherit;
+}
+
+.author a {
+  color: grey;
+}
+
+.post-category {
+  display: block;
+}
+
+.post-category a {
+  color: grey;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .container {
   width: 80%;
   margin: 0 auto;
+}
+
+.post.container {
+  margin-top: 2rem;
+}
+
+.entry-content blockquote {
+  margin: 0 0 0 0.75em;
+  padding: 0 0 0 0.75em;
+  border-left: 2px solid grey;
+  font-style: italic;
+  color: grey;
+  clear: both;
+}
+
+cite {
+  float: right;
+  font-style: italic;
+  margin-bottom: 1.5em;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+.entry-content ul, .entry-content ol {
+    margin: 0 1rem;
+}
+
+ul {
+  list-style-type: disc;
+}
+
+ol {
+  list-style: decimal;
+}
+
+@media only screen and (min-width: 481px) {
 }
 
 /*Header*/
@@ -125,12 +198,17 @@ nav ul li a {
   justify-content: flex-end;
   height: 100%;
   padding: 1rem 0;
-
 }
+
 .banner-box-content {
   background-color: white;
   width: 40%;
   padding: 2rem;
+}
+
+.banner-box-content h2 {
+  font-size: 2rem;
+  margin-top: 1rem;
 }
 
 /*Archive Loop*/
@@ -174,6 +252,7 @@ nav ul li a {
   color: orange;
   padding-top: 0;
   font-size: 3rem;
+  margin-top: 0;
 }
 
 .post.container {
@@ -187,9 +266,12 @@ nav ul li a {
   margin: 0 auto;
   max-width: 90%;
 }
-
-.entry-content p {
+/*entry-content p {
   padding-bottom: 0.7rem;
+}
+*/
+.entry-content p:first-child {
+  margin-top: 0;
 }
 
 .wp-caption .wp-caption-text {
@@ -226,22 +308,45 @@ nav ul li a {
   text-align: right;
 }
 
+#comments{
+  width: 50%;
+  min-height: 100px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 10%;
+  padding: 10px;
+
+}
+
 .comment {
   display: flex;
   align-items: flex-end;
   flex-direction: column;
   width: 100%;
-  background-color: grey;
+  background-color: lightgrey;
 }
-#comments{
-  width: 500px;
-  min-height: 100px;
-  background-color: white;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 10%;
-  padding: 10px;
+
+.comments-area {
+  display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.comment-list {
+  list-style: none;
+}
+
+h2.comments-title {
   color: grey;
+  margin-top: 0;
+  font-size: 1.7rem;
+  border-top: 2px solid grey;
+  width: 100%;
+}
+
+.comment-meta {
+  background-color: inherit;
 }
 
 @media screen and (min-width: 768px) {
